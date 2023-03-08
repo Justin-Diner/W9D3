@@ -2,6 +2,8 @@ const csrfToken = document.querySelector("meta[name=csrf-token]").content;
 
 async function customFetch(url, options = {}) {
   options.headers = {
+    'X-CSRF-Token': csrfToken,
+    Accept: 'application/json',
     // Your code here
     ...options.headers
   };
