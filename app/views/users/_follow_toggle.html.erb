@@ -4,11 +4,13 @@
   <%= render "shared/auth_token" %>
 
   <% if is_following %>
-    <input data-user-id="<%= user %>" type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_method" value="DELETE">
   <% end %>
   
   <button
     class="follow-toggle"
+	data-user-id="<%= user.id %>"
+	data-follow-state="<%= is_following ? "followed" : "unfollowed" %>"
   >
     <%= is_following ? "Unfollow!" : "Follow!" %>
   </button>
