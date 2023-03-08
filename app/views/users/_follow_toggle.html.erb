@@ -4,7 +4,7 @@
   <%= render "shared/auth_token" %>
 
   <% if is_following %>
-    <input type="hidden" name="_method" value="DELETE">
+    <input data-user-id="<%= user %>" type="hidden" name="_method" value="DELETE">
   <% end %>
   
   <button
